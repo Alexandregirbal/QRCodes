@@ -26,9 +26,11 @@ def generate_qrcode(
     return output_file
 
 
-def image_to_pdf(image_path: str, size: float, title: str = None) -> None:
+def image_to_pdf(image_path: str, qr_size: int, size: int, title: str = None) -> None:
     """Converts an image to a PDF file
     - image_path: path to the image to convert
+    - qr_width: width of the QR code image
+    - qr_height: height of the QR code image
     - size: size of the image in cm
     - title: title of the PDF file
     """
@@ -49,7 +51,7 @@ def image_to_pdf(image_path: str, size: float, title: str = None) -> None:
         pdf_width = size * aspect_ratio
         pdf_height = size
 
-    # create new PDF canvas and embed the image in it
+    # create new PDF canvas and embed the image and QR code in it
     pdf_file = f"{image_path.split('.')[0]}.pdf"
     c = canvas.Canvas(pdf_file, pagesize=letter)
     c.setTitle(title if title else image_path.rsplit("/", 1)[-1].split(".")[0])
