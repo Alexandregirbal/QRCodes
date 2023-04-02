@@ -1,0 +1,4 @@
+image==1.5.33
+Pillow==9.5.0
+qrcode==7.4.2
+typing_extensions==4.5.0

@@ -6,5 +6,5 @@ if __name__ == "__main__":
         pixel_color="#000000",
         background_color="#ffffff",
         size=100,
-        output_file="qrcode.png",
+        output_file="LeClosDesMimosas.png",
     )
